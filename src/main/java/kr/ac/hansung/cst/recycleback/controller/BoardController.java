@@ -20,7 +20,7 @@ import lombok.Setter;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
-@RequestMapping(path = "/boards")
+@RequestMapping(path = "/weRecycle/boards")
 public class BoardController {
 
     @Autowired

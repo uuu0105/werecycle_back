@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
-@RequestMapping(path = "/recycles")
+@RequestMapping(path = "weRecycle/recycles")
 public class RecycleController {
 
     @Autowired
@@ -16,16 +16,19 @@ public class RecycleController {
 
     @PostMapping
     public ResponseEntity<?> addRecycle(@RequestBody Recycle request){
+        System.out.println(request);
         return ResponseEntity.ok(recycleService.createRecycle(request));
     }
 
     @GetMapping("/article/{category}")
     public ResponseEntity<?> retrieveArticle(@PathVariable String category){
+        System.out.println(category);
         return ResponseEntity.ok(recycleService.getArticle(category));
     }
 
     @GetMapping("/infor/{article}")
     public ResponseEntity<?> retrieveInfor(@PathVariable String article){
+        System.out.println(article);
         return ResponseEntity.ok(recycleService.getInfor(article));
     }
 }

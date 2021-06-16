@@ -10,7 +10,7 @@ import java.util.List;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
-@RequestMapping(path = "/issues")
+@RequestMapping(path = "/weRecycle/issues")
 public class CrawlingController {
     @Autowired
     private CrawlingService offerService;

@@ -14,7 +14,7 @@ import java.util.List;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
-@RequestMapping(path = "/users")
+@RequestMapping(path = "/weRecycle/users")
 public class UserController {
 
     @Autowired

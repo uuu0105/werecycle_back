@@ -45,7 +45,8 @@ public class BoardController {
         final List<Post> boards = boardService.searchPosts(word);
 
         if (boards.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            //return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("해당 단어로 검색된 결과가 없습니다. 자유게시글 목록으로 돌아갑니다.");
         }
 
         return ResponseEntity.ok(boards);

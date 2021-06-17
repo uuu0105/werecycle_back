@@ -14,12 +14,6 @@ public class RecycleController {
     @Autowired
     RecycleService recycleService;
 
-    @PostMapping
-    public ResponseEntity<?> addRecycle(@RequestBody Recycle request){
-        System.out.println(request);
-        return ResponseEntity.ok(recycleService.createRecycle(request));
-    }
-
     @GetMapping("/article/{category}")
     public ResponseEntity<?> retrieveArticle(@PathVariable String category){
         System.out.println(category);

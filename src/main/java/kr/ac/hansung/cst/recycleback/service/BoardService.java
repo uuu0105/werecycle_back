@@ -4,6 +4,7 @@ import kr.ac.hansung.cst.recycleback.dao.BoardDao;
 import kr.ac.hansung.cst.recycleback.dao.UserDao;
 import kr.ac.hansung.cst.recycleback.model.Post;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -23,8 +24,8 @@ public class BoardService {
 
     public List<Post> getPostPage(int n) {
         Pageable paging = PageRequest.of(n-1, 10,Sort.Direction.DESC, "postid");
-        List<Post> page = boardDao.findByPostidLessThanEqual(n*10,paging);
-        return page;
+        Page<Post> page = boardDao.findAll(paging);
+        return page.getContent();
     }
 
     public int getTotalElements() {

@@ -14,4 +14,6 @@ public class CrawlingService {
     public List<Article> getIssuePages(int pagenum) {
         return offerDao.CrawlingPage(pagenum);
     }
+
+    public List<Article> getSearchCrawling(String word) { return offerDao.SearchCrawlingPage(word); }
 }
